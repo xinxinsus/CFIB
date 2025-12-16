@@ -6,7 +6,6 @@ DEVICE = torch.device('cuda:3' if torch.cuda.is_available() else'cpu')#
 
 # import random
 #
-# # 针对每组实验设置不同的种子
 # num_experiments = 3
 #
 # seeds = [random.randint(1, 100000) for _ in range(num_experiments)]
@@ -23,13 +22,12 @@ DEVICE = torch.device('cuda:3' if torch.cuda.is_available() else'cpu')#
 #for eng
 # TORCH_SEED = 3478 #129   128 130
 
-#for split 20
 TORCH_SEED = 129 #130 #125
 
 class Config(object):
     def __init__(self):
         self.split = 'split10'
-        self.bert_cache_path = '/home/ubuntu/models/roberta-large' #/home/ubuntu/models '/media/tiffany/新加卷/PycharmProjects/models/roberta-large'
+        self.bert_cache_path = '/home/ubuntu/models/roberta-large'
 
         # hyper parameter
         self.epochs = 20
@@ -41,7 +39,6 @@ class Config(object):
         self.dp = 0.1
         self.warmup_proportion = 0.1
         self.TORCH_SEED=TORCH_SEED
-        # gnn
         self.feat_dim = 1024
         self.att_heads = '4'
 
